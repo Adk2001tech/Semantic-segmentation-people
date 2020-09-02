@@ -53,9 +53,9 @@ def pred():
          img.save(file_object, format='png')
         
          file_object.seek(0)
-         return 'DONE'
          
-         #return send_file(file_object, mimetype='image/PNG',attachment_filename='pic.png',  as_attachment=True)
+         
+    return send_file(file_object, mimetype='image/PNG',attachment_filename='pic.png',  as_attachment=True)
            
 
 
