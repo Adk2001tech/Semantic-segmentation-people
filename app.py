@@ -51,18 +51,10 @@ def pred():
 
          
          img.save(file_object, format='png')
-         #plt.close()
+        
          file_object.seek(0)
-         #plot_url1=base64.b64encode(img_x.getvalue()).decode('utf8')
+         
          return send_file(file_object, mimetype='image/PNG',attachment_filename='pic.png',  as_attachment=True)
-
-
-    #return render_template('pred.html', plot_url0=plot_url0,  plot_url1=plot_url1 )
-
-
-
-
-
 
 
 
@@ -70,42 +62,3 @@ def pred():
 if __name__=='__main__':
     app.run(debug=True)
 
-
-
-#
-# from flask import Flask, send_file, Response, jsonify
-# import jsonpickle
-# from PIL import Image
-# import numpy as np
-# import io
-# import base64
-#
-# app = Flask(__name__)
-#
-# raw_data = [
-#     [[255,255,255],[0,0,0],[255,255,255]],
-#     [[0,0,1],[255,255,255],[0,0,0]],
-#     [[255,255,255],[0,0,0],[255,255,255]],
-# ]
-#
-# @app.route('/', methods = ['GET', 'POST'])
-# def image():
-#     # my numpy array
-#     arr = np.array(raw_data)
-#
-#     # convert numpy array to PIL Image
-#     img = Image.fromarray(arr.astype('uint8'))
-#
-#     # create file-object in memory
-#     file_object = io.BytesIO()
-#
-#     # write PNG in file-object
-#     img.save(file_object, 'PNG')
-#
-#     # move to beginning of file so `send_file()` it will read from start
-#     file_object.seek(0)
-#     return send_file(file_object, mimetype='image/PNG',attachment_filename='pic.png',  as_attachment=True)
-#
-#
-#
-# app.run()
