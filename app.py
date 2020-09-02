@@ -2,7 +2,7 @@ import os
 import numpy as np
 
 from flask import Flask, render_template, url_for, request
-from flask import send_file                                      ###################################################NEW
+from flask import send_file                                      
 from werkzeug.utils import secure_filename
 
 
